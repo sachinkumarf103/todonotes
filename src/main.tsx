@@ -56,6 +56,7 @@ const router = createBrowserRouter([
       { path: "/notes/:noteId", element: <NoteViewIdCheck /> },
       { path: "/notes/createpasscode", element: <CreateOrForgetPassCode /> },
       { path: "/notes/forgetpasscode", element: <CreateOrForgetPassCode /> },
+      { path: "*", element: <PageNotFound /> }
     ],
   },
 ]);
