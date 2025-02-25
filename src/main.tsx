@@ -15,34 +15,49 @@ import LoadingPage from './Components/Pages/LoadingCompo/LoadingPage.tsx'
 import PageNotFound from './Components/Pages/PageNotFound.tsx'
 
 
+// const router = createBrowserRouter([
+//   {
+//     path: "/todonotes/",
+//     element: <Suspense fallback={<LoadingPage />}><LayoutLazy /></Suspense>,
+//     errorElement: <PageNotFound />,
+//     children: [
+//       {
+//         path: '/todonotes/',
+//         element: <TodosApp />
+//       },
+//       {
+//         path: '/todonotes/notes',
+//         element: <ProtectedNotesApp  />
+//       },
+//       {
+//         path: '/todonotes/notes/:noteId',
+//         element: <NoteViewIdCheck />
+//       },
+//       {
+//         path: '/todonotes/notes/createpasscode',
+//         element: <CreateOrForgetPassCode />
+//       },
+//       {
+//         path: '/todonotes/notes/forgetpasscode',
+//         element: <CreateOrForgetPassCode />
+//       }
+//     ]
+//   }
+// ]);
+
 const router = createBrowserRouter([
   {
-    path: "/todonotes/",
+    path: "/", // Root path for Vercel
     element: <Suspense fallback={<LoadingPage />}><LayoutLazy /></Suspense>,
     errorElement: <PageNotFound />,
     children: [
-      {
-        path: '/todonotes/',
-        element: <TodosApp />
-      },
-      {
-        path: '/todonotes/notes',
-        element: <ProtectedNotesApp  />
-      },
-      {
-        path: '/todonotes/notes/:noteId',
-        element: <NoteViewIdCheck />
-      },
-      {
-        path: '/todonotes/notes/createpasscode',
-        element: <CreateOrForgetPassCode />
-      },
-      {
-        path: '/todonotes/notes/forgetpasscode',
-        element: <CreateOrForgetPassCode />
-      }
-    ]
-  }
+      { path: "/", element: <TodosApp /> },
+      { path: "/notes", element: <ProtectedNotesApp /> },
+      { path: "/notes/:noteId", element: <NoteViewIdCheck /> },
+      { path: "/notes/createpasscode", element: <CreateOrForgetPassCode /> },
+      { path: "/notes/forgetpasscode", element: <CreateOrForgetPassCode /> },
+    ],
+  },
 ]);
 
 // const router = createBrowserRouter(
